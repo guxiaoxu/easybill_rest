@@ -1,6 +1,7 @@
 package xgu.myproject.easybill.rest.security.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import xgu.myproject.easybill.rest.security.modal.User;
 import xgu.myproject.easybill.rest.security.service.SessionService;
@@ -26,4 +27,15 @@ public class SecurityController {
     public String register(@RequestBody User user){
         return this.userService.register(user);
     }
+
+    @PostMapping(value = "login")
+    public String login(@RequestBody User user) {
+        return this.userService.login(user);
+    }
+
+    @PostMapping(value = "logout")
+    public void logout(@RequestHeader HttpHeaders headers){
+
+    }
+
 }

@@ -3,6 +3,7 @@ package xgu.myproject.easybill.rest.security.modal;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 @Entity
 @Table(name = "eb_session")
@@ -16,7 +17,9 @@ public class Session{
 
     public Session(long userId, String token) {
         this.sessionId = new SessionId(userId, token);
-        this.expire = new Timestamp(System.currentTimeMillis());
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.HOUR, 24 * 10);
+        this.expire = new Timestamp(calendar.getTime().getTime());
     }
 
     public Session() {

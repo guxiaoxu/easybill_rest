@@ -6,6 +6,8 @@ import xgu.myproject.easybill.rest.security.modal.Session;
 import xgu.myproject.easybill.rest.security.repository.SessionRepository;
 import xgu.myproject.easybill.rest.util.StringUtil;
 
+import java.util.Optional;
+
 @Service
 public class SessionService {
 
@@ -15,5 +17,9 @@ public class SessionService {
     public String generateToken(long userId) {
         Session session = new Session(userId, StringUtil.generateUUID());
         return sessionRepository.save(session).getSessionId().getToken();
+    }
+
+    public Optional<String> checkToken(String token) {
+        return this.sessionRepository.checkToken(token);
     }
 }
