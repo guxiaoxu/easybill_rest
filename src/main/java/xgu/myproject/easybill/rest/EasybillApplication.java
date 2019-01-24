@@ -1,4 +1,4 @@
-package xgu.myproject.easybill;
+package xgu.myproject.easybill.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

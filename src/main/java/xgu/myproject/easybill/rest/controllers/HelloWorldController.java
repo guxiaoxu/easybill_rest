@@ -1,4 +1,4 @@
-package xgu.myproject.easybill.controllers;
+package xgu.myproject.easybill.rest.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
