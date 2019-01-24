@@ -17,7 +17,8 @@ public class SecurityController {
     private SessionService sessionService;
 
     @GetMapping(value = "checkEmail")
-    public boolean checkEmail(String email) {
+    public boolean checkEmail(@RequestParam(value = "email") String email) {
+        System.out.println(email);
         return userService.checkEmail(email);
     }
 
