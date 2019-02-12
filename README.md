@@ -13,5 +13,5 @@ GitHub pages
 Google Cloud App Engine
 
 # Code
-Angular[https://github.com/guxiaoxu/easybill_angular]
-WebService[https://github.com/guxiaoxu/easybill_rest]
+[Angular @Github](https://github.com/guxiaoxu/easybill_angular)
+[WebService @Github](https://github.com/guxiaoxu/easybill_rest)
