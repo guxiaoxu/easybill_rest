@@ -18,7 +18,7 @@ import java.util.Optional;
 public class SessionTokenAuthFilter implements Filter
 {
     private final static String TOKEN_HEADER_KEY = "Authorization";
-    private final static String[] BY_PASS_URIS = {"/user"};
+    private final static String[] BY_PASS_URIS = {"/user","/hw"};
 
     @Autowired
     private SessionService sessionService;

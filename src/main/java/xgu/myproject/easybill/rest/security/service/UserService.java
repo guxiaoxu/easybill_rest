@@ -3,10 +3,8 @@ package xgu.myproject.easybill.rest.security.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import xgu.myproject.easybill.rest.security.modal.Session;
-import xgu.myproject.easybill.rest.security.modal.User;
+import xgu.myproject.easybill.rest.security.model.User;
 import xgu.myproject.easybill.rest.security.repository.UserRepository;
-import xgu.myproject.easybill.rest.security.repository.SessionRepository;
 import xgu.myproject.easybill.rest.util.StringUtil;
 
 @Service

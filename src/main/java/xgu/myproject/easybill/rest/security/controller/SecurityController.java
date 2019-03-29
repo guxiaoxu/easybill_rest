@@ -3,7 +3,7 @@ package xgu.myproject.easybill.rest.security.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
-import xgu.myproject.easybill.rest.security.modal.User;
+import xgu.myproject.easybill.rest.security.model.User;
 import xgu.myproject.easybill.rest.security.service.SessionService;
 import xgu.myproject.easybill.rest.security.service.UserService;
 

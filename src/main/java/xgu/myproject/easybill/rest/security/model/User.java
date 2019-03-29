@@ -1,4 +1,4 @@
-package xgu.myproject.easybill.rest.security.modal;
+package xgu.myproject.easybill.rest.security.model;
 
 import javax.persistence.*;
 

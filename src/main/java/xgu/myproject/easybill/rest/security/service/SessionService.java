@@ -2,7 +2,7 @@ package xgu.myproject.easybill.rest.security.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xgu.myproject.easybill.rest.security.modal.Session;
+import xgu.myproject.easybill.rest.security.model.Session;
 import xgu.myproject.easybill.rest.security.repository.SessionRepository;
 import xgu.myproject.easybill.rest.util.StringUtil;
 

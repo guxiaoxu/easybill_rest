@@ -1,7 +1,6 @@
-package xgu.myproject.easybill.rest.security.modal;
+package xgu.myproject.easybill.rest.security.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
