@@ -1,4 +1,4 @@
-package xgu.myproject.easybill.rest.security.model;
+package xgu.myproject.easybill.rest.user.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -17,9 +17,12 @@ public class Session{
     public Session(long userId, String token) {
         this.sessionId = new SessionId(userId, token);
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR, 24 * 10);
+        calendar.add(Calendar.HOUR, 24 * 10); //ten days expire
         this.expire = new Timestamp(calendar.getTime().getTime());
     }
+
+    @Transient
+    private String userNickName;
 
     public Session() {
     }
@@ -38,5 +41,13 @@ public class Session{
 
     public void setSessionId(SessionId sessionId) {
         this.sessionId = sessionId;
+    }
+
+    public String getUserNickName() {
+        return userNickName;
+    }
+
+    public void setUserNickName(String userNickName) {
+        this.userNickName = userNickName;
     }
 }

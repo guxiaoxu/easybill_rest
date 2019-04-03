@@ -1,10 +1,11 @@
-package xgu.myproject.easybill.rest.security.config;
+package xgu.myproject.easybill.rest.user.filter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import xgu.myproject.easybill.rest.security.service.SessionService;
+import xgu.myproject.easybill.rest.user.service.SessionService;
+import xgu.myproject.easybill.rest.util.StringUtil;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +18,9 @@ import java.util.Optional;
 @Order(1)
 public class SessionTokenAuthFilter implements Filter
 {
-    private final static String TOKEN_HEADER_KEY = "Authorization";
-    private final static String[] BY_PASS_URIS = {"/user","/hw"};
+    public final static String TOKEN_HEADER_KEY = "Authorization";
+    private final static String[] BY_PASS_URIS_STARTWITH = {"/user"};
+    private final static String[] BY_PASS_URIS_MATCH = {"/","/helloworld"};
 
     @Autowired
     private SessionService sessionService;
@@ -54,7 +56,12 @@ public class SessionTokenAuthFilter implements Filter
     }
 
     private static boolean byPassURI(String requestURI) {
-        for(String test : BY_PASS_URIS) {
+        for(String test : BY_PASS_URIS_MATCH) {
+            if (requestURI.equals(test)){
+                return true;
+            }
+        }
+        for(String test : BY_PASS_URIS_STARTWITH) {
             if (requestURI.startsWith(test)){
                 return true;
             }

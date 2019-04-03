@@ -1,4 +1,4 @@
-package xgu.myproject.easybill.rest.security.model;
+package xgu.myproject.easybill.rest.user.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

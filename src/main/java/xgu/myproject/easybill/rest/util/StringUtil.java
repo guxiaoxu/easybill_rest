@@ -48,4 +48,11 @@ public class StringUtil {
         }
         return new String(hex, Charset.forName("UTF8"));
     }
+
+    public static boolean isEmpty(String str){
+        if(str == null){
+            return true;
+        }
+        return "".equals(str);
+    }
 }

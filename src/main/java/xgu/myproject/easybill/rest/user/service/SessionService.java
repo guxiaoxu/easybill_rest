@@ -1,9 +1,9 @@
-package xgu.myproject.easybill.rest.security.service;
+package xgu.myproject.easybill.rest.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xgu.myproject.easybill.rest.security.model.Session;
-import xgu.myproject.easybill.rest.security.repository.SessionRepository;
+import xgu.myproject.easybill.rest.user.model.Session;
+import xgu.myproject.easybill.rest.user.repository.SessionRepository;
 import xgu.myproject.easybill.rest.util.StringUtil;
 
 import java.util.Optional;
@@ -14,12 +14,16 @@ public class SessionService {
     @Autowired
     private SessionRepository sessionRepository;
 
-    public String generateToken(long userId) {
+    public Session createSession(long userId) {
         Session session = new Session(userId, StringUtil.generateUUID());
-        return sessionRepository.save(session).getSessionId().getToken();
+        return sessionRepository.save(session);
     }
 
     public Optional<String> checkToken(String token) {
         return this.sessionRepository.checkToken(token);
+    }
+
+    public void deleteSession(String token){
+        sessionRepository.deleteBySessionIdToken(token);
     }
 }
