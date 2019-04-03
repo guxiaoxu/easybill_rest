@@ -2,6 +2,7 @@ package xgu.myproject.easybill.rest.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import xgu.myproject.easybill.rest.user.model.Session;
 import xgu.myproject.easybill.rest.user.repository.SessionRepository;
 import xgu.myproject.easybill.rest.util.StringUtil;
@@ -23,6 +24,7 @@ public class SessionService {
         return this.sessionRepository.checkToken(token);
     }
 
+    @Transactional
     public void deleteSession(String token){
         sessionRepository.deleteBySessionIdToken(token);
     }

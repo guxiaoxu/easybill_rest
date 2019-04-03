@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface BillRepository extends CrudRepository<Bill, Long> {
-    List<Bill> findAllByUserId(long userId);
+    List<Bill> findAllByUserIdOrderByBillTime(long userId);
     void deleteByIdAndUserId(long id, long userId);
 }

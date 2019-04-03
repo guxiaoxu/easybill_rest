@@ -31,7 +31,6 @@ public class SessionTokenAuthFilter implements Filter
         final HttpServletRequest httpRequest = (HttpServletRequest) request;
 
         String requestURI = httpRequest.getRequestURI();
-        System.out.println("RequestURI: " + requestURI);
         if(!byPassURI(requestURI)){
             //extract token from header
             final String accessToken = httpRequest.getHeader(TOKEN_HEADER_KEY);

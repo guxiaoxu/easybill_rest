@@ -19,7 +19,7 @@ public class BillService {
     }
 
     public List<Bill> listBill(long userId){
-        return this.billRepository.findAllByUserId(userId);
+        return this.billRepository.findAllByUserIdOrderByBillTime(userId);
     }
 
     @Transactional

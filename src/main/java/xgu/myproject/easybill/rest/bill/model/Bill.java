@@ -1,10 +1,12 @@
 package xgu.myproject.easybill.rest.bill.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "eb_card")
+@Table(name = "eb_bill")
 public class Bill {
 
     @Id
@@ -16,7 +18,7 @@ public class Bill {
     private long userId;
 
     @Column(name = "card_id")
-    private long cardId;
+    private Long cardId;
 
     @Column(name = "type")
     private String type;
@@ -28,6 +30,7 @@ public class Bill {
     private double amount;
 
     @Column(name = "bill_time")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Timestamp billTime;
 
     public long getId() {
@@ -46,11 +49,11 @@ public class Bill {
         this.userId = userId;
     }
 
-    public long getCardId() {
+    public Long getCardId() {
         return cardId;
     }
 
-    public void setCardId(long cardId) {
+    public void setCardId(Long cardId) {
         this.cardId = cardId;
     }
 
