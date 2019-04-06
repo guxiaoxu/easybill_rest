@@ -14,6 +14,7 @@ import xgu.myproject.easybill.rest.user.service.UserService;
 import java.util.Collections;
 import java.util.Map;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -36,12 +37,12 @@ public class UserController {
     }
 
     @PostMapping(value = "session") //login
-    public ResponseEntity<Session> login(@RequestBody User user) {
+    public ResponseEntity<?> login(@RequestBody User user) {
         Session session = this.userService.login(user);
         if(session != null){
             return ResponseEntity.ok(session);
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Collections.singletonMap("message", "Invalid email or password!"));
         }
     }
 
