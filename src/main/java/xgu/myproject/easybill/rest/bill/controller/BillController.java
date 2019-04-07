@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/bill")
 public class BillController {
@@ -26,6 +25,11 @@ public class BillController {
     @GetMapping()
     public List<Bill> listBill(@SessionAttribute("userId") long userId){
         return this.billService.listBill(userId);
+    }
+
+    @GetMapping(value = "{billId}")
+    public Bill getBill(@SessionAttribute("userId") long userId, @PathVariable("billId") long billId){
+        return this.billService.getBill(userId, billId);
     }
 
     @PutMapping(value = "{billId}")

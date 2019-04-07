@@ -2,10 +2,10 @@ package xgu.myproject.easybill.rest.user.filter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import xgu.myproject.easybill.rest.user.service.SessionService;
-import xgu.myproject.easybill.rest.util.StringUtil;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.Optional;
 
 @Component
-@Order(1)
+@Order(2)
 public class SessionTokenAuthFilter implements Filter
 {
     public final static String TOKEN_HEADER_KEY = "Authorization";

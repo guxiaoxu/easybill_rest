@@ -14,7 +14,6 @@ import xgu.myproject.easybill.rest.user.service.UserService;
 import java.util.Collections;
 import java.util.Map;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {

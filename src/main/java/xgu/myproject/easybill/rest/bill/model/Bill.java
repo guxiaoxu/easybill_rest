@@ -30,7 +30,7 @@ public class Bill {
     private double amount;
 
     @Column(name = "bill_time")
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm")
     private Timestamp billTime;
 
     public long getId() {

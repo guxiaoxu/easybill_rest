@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/card")
 public class CardController {
@@ -26,6 +25,11 @@ public class CardController {
     @GetMapping()
     public List<Card> listCard(@SessionAttribute("userId") long userId){
         return this.cardService.listCard(userId);
+    }
+
+    @GetMapping(value = "{cardId}")
+    public Card getCard(@SessionAttribute("userId") long userId, @PathVariable("cardId") long cardId){
+        return this.cardService.getCard(userId, cardId);
     }
 
     @DeleteMapping(value = "{cardId}")

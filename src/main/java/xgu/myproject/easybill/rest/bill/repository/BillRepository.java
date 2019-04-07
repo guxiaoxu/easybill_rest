@@ -10,4 +10,5 @@ import java.util.List;
 public interface BillRepository extends CrudRepository<Bill, Long> {
     List<Bill> findAllByUserIdOrderByBillTime(long userId);
     void deleteByIdAndUserId(long id, long userId);
+    Bill findByIdAndUserId(long id, long userId);
 }

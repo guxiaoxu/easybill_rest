@@ -22,6 +22,10 @@ public class CardService {
         return this.cardRepository.findAllByUserId(userId);
     }
 
+    public Card getCard(long userId, long cardId){
+        return this.cardRepository.findByIdAndUserId(cardId, userId);
+    }
+
     @Transactional
     public void deleteCard(long id, long userId){
         this.cardRepository.deleteByIdAndUserId(id, userId);

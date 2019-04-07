@@ -22,6 +22,10 @@ public class BillService {
         return this.billRepository.findAllByUserIdOrderByBillTime(userId);
     }
 
+    public Bill getBill(long userId, long billId) {
+        return this.billRepository.findByIdAndUserId(billId, userId);
+    }
+
     @Transactional
     public void deleteBill(long id, long userId){
         this.billRepository.deleteByIdAndUserId(id, userId);

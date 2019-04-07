@@ -1,5 +1,7 @@
 package xgu.myproject.easybill.rest.card.model;
 
+import xgu.myproject.easybill.rest.util.StringUtil;
+
 import javax.persistence.*;
 
 @Entity
@@ -61,5 +63,13 @@ public class Card {
 
     public void setAlias(String alias) {
         this.alias = alias;
+    }
+
+    @Transient
+    public String getDisplayAlias() {
+        if (StringUtil.isEmpty(this.alias)){
+            return "Ends in " + this.lastDigits;
+        }
+        return this.alias;
     }
 }

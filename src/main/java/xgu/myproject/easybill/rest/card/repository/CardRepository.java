@@ -10,4 +10,5 @@ import java.util.List;
 public interface CardRepository extends CrudRepository<Card, Long> {
     List<Card> findAllByUserId(long userId);
     void deleteByIdAndUserId(long id, long userId);
+    Card findByIdAndUserId(long id, long userId);
 }
