@@ -20,7 +20,7 @@ public class SessionTokenAuthFilter implements Filter
 {
     public final static String TOKEN_HEADER_KEY = "Authorization";
     private final static String[] BY_PASS_URIS_STARTWITH = {"/user"};
-    private final static String[] BY_PASS_URIS_MATCH = {"/","/helloworld"};
+    private final static String[] BY_PASS_URIS_MATCH = {"/"};
 
     @Autowired
     private SessionService sessionService;
@@ -31,7 +31,7 @@ public class SessionTokenAuthFilter implements Filter
         final HttpServletRequest httpRequest = (HttpServletRequest) request;
 
         String requestURI = httpRequest.getRequestURI();
-        System.out.println("RequestURI: " + requestURI);
+        //System.out.println("RequestURI: " + requestURI);
         if(!byPassURI(requestURI)){
             //extract token from header
             final String accessToken = httpRequest.getHeader(TOKEN_HEADER_KEY);
