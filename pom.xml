@@ -11,7 +11,7 @@
 	<groupId>xgu.myproject</groupId>
 	<artifactId>easybill</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>easybill</name>
+	<name>EasyBill</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

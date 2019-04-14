@@ -8,8 +8,6 @@ import xgu.myproject.easybill.rest.user.model.User;
 import xgu.myproject.easybill.rest.user.repository.UserRepository;
 import xgu.myproject.easybill.rest.util.StringUtil;
 
-import javax.validation.constraints.Null;
-
 @Service
 public class UserService {
 
